@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "name": "AI Employee",
+      "product_id": "prod_TQiERaA4LUOTgD",
+      "price_id": "price_1STqoMARpIMdAlRWQs71N8uC",
+      "amount": "$3,000/month"
+    },
+    {
+      "name": "AI Team",
+      "product_id": "prod_TQiENgtmEk95Ym",
+      "price_id": "price_1STqoNARpIMdAlRWUwX3T0om",
+      "amount": "$7,000/month"
+    },
+    {
+      "name": "AI Department",
+      "product_id": "prod_TQiEy3SHe4AqU7",
+      "price_id": "price_1STqoOARpIMdAlRWyqbiUDHe",
+      "amount": "$15,000/month"
+    }
+  ],
+  "payment_links": [
+    {
+      "package": "AI Employee",
+      "payment_link_url": "https://buy.stripe.com/6oU5kCesF2xncRnePj9R608",
+      "payment_link_id": "plink_1STqoOARpIMdAlRW2WI4orDs"
+    },
+    {
+      "package": "AI Team",
+      "payment_link_url": "https://buy.stripe.com/5kQcN470d0pf2cJ4aF9R609",
+      "payment_link_id": "plink_1STqoOARpIMdAlRWSbfGDz7p"
+    },
+    {
+      "package": "AI Department",
+      "payment_link_url": "https://buy.stripe.com/8x27sK98l0pf5oVcHb9R60a",
+      "payment_link_id": "plink_1STqoPARpIMdAlRWUJd17T9q"
+    }
+  ],
+  "pilot_coupon": {
+    "id": "wIhS3yUL",
+    "code": "wIhS3yUL",
+    "discount": "50.0%"
+  }
+}

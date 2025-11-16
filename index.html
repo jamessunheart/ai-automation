@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation Services | Full Potential AI</title>
+    <meta name="description" content="Deploy autonomous AI agents to automate your business operations 24/7. From $3,000/month. Proven technology, measurable ROI.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0891b2;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--light-gray);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero .description {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .cta-button {
+            font-size: 18px;
+            padding: 16px 40px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .value-prop h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .value-prop .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, var(--light-gray), var(--white));
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .pricing .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            border-width: 3px;
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border-bottom-left-radius: 8px;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 20px;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .pricing-card .description {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: var(--dark);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .pricing-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card ul li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .pricing-card .target {
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--gray);
+            text-align: center;
+        }
+
+        /* ROI Calculator */
+        .roi-calculator {
+            padding: 80px 0;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .roi-calculator h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .roi-calculator .subtitle {
+            text-align: center;
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 60px;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .roi-comparison {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .roi-comparison h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .comparison-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .comparison-value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .comparison-value.savings {
+            color: var(--success);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: var(--dark);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Technology Stack */
+        .tech-stack {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .tech-stack h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .tech-stack .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-feature {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tech-feature h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .tech-feature p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .final-cta p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            .roi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid,
+            .benefits-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="https://fullpotential.com" class="logo">Full Potential AI</a>
+                <a href="#pricing" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Proven AI Technology • 24/7 Autonomous Operation</div>
+                <h1>Your AI Employee<br>Works While You Sleep</h1>
+                <p class="subtitle">Deploy autonomous AI agents to automate your operations</p>
+                <p class="description">
+                    Stop paying $50k-$150k/year for human employees doing repetitive work.
+                    Our AI agents work 24/7, never take breaks, and deliver consistent results
+                    for a fraction of the cost.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="cta-button">View Pricing</a>
+                    <a href="mailto:james@fullpotential.com?subject=AI Automation Discovery Call" class="cta-button secondary">Book Discovery Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Always-On Operation</p>
+                </div>
+                <div class="stat-item">
+                    <h3>70%+</h3>
+                    <p>Cost Reduction vs Hiring</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3-5x</h3>
+                    <p>Faster Task Execution</p>
+                </div>
+                <div class="stat-item">
+                    <h3>$3k</h3>
+                    <p>Starting Price/Month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop">
+        <div class="container">
+            <h2>Why AI Automation?</h2>
+            <p class="subtitle">Transform your operations with autonomous AI agents</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Massive Cost Savings</h3>
+                    <p>
+                        Replace $50k-$150k/year employees with AI agents at $36k-$180k/year,
+                        but with 3-5x the productivity. Pay for results, not time.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Scale Without Limits</h3>
+                    <p>
+                        Add capacity instantly. No hiring, training, or onboarding delays.
+                        Deploy new agents in hours, not months.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Perfect Consistency</h3>
+                    <p>
+                        AI never gets tired, makes emotional decisions, or forgets processes.
+                        Every task executed perfectly, every time.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Continuous Improvement</h3>
+                    <p>
+                        Agents learn and optimize workflows automatically. They get better
+                        over time without additional training costs.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Built on Proven Tech</h3>
+                    <p>
+                        Powered by I PROACTIVE platform with multi-agent orchestration,
+                        already operational and battle-tested.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Full Transparency</h3>
+                    <p>
+                        Real-time dashboards, performance metrics, and detailed activity logs.
+                        Always know what your AI is doing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="subtitle">Choose the package that fits your automation needs</p>
+
+            <div class="pricing-grid">
+                <!-- AI Employee -->
+                <div class="pricing-card">
+                    <h3>AI Employee</h3>
+                    <div class="price">$3,000<span>/month</span></div>
+                    <p class="description">Perfect for automating a single workflow or process</p>
+
+                    <ul>
+                        <li>1 autonomous AI agent</li>
+                        <li>Single workflow automation</li>
+                        <li>24/7 operation</li>
+                        <li>Weekly performance reports</li>
+                        <li>Email support</li>
+                        <li>Basic integrations</li>
+                    </ul>
+
+                    <a href="https://buy.stripe.com/6oU5kCesF2xncRnePj9R608" class="cta-button" style="width: 100%; text-align: center;">Subscribe Now</a>
+
+                    <div class="target">
+                        <strong>Best for:</strong> Small businesses, solopreneurs, single-process automation
+                    </div>
+                </div>
+
+                <!-- AI Team (Featured) -->
+                <div class="pricing-card featured">
+                    <h3>AI Team</h3>
+                    <div class="price">$7,000<span>/month</span></div>
+                    <p class="description">Multiple coordinated agents working together</p>
+
+                    <ul>
+                        <li>3 coordinated AI agents</li>
+                        <li>Multi-workflow automation</li>
+                        <li>24/7 operation</li>
+                        <li>Custom tool integrations</li>
+                        <li>Daily monitoring & optimization</li>
+                        <li>Priority support</li>
+                        <li>Performance optimization</li>
+                        <li>Monthly strategy calls</li>
+                    </ul>
+
+                    <a href="https://buy.stripe.com/5kQcN470d0pf2cJ4aF9R609" class="cta-button" style="width: 100%; text-align: center;">Subscribe Now</a>
+
+                    <div class="target">
+                        <strong>Best for:</strong> Growing businesses, multi-function automation, coordinated workflows
+                    </div>
+                </div>
+
+                <!-- AI Department -->
+                <div class="pricing-card">
+                    <h3>AI Department</h3>
+                    <div class="price">$15,000<span>/month</span></div>
+                    <p class="description">Complete department-level automation</p>
+
+                    <ul>
+                        <li>5+ AI agents + orchestration</li>
+                        <li>Complete function automation</li>
+                        <li>24/7 operation & monitoring</li>
+                        <li>Custom integrations unlimited</li>
+                        <li>Dedicated success manager</li>
+                        <li>White-glove support</li>
+                        <li>Advanced analytics & reporting</li>
+                        <li>Continuous optimization</li>
+                        <li>Weekly strategy sessions</li>
+                    </ul>
+
+                    <a href="https://buy.stripe.com/8x27sK98l0pf5oVcHb9R60a" class="cta-button" style="width: 100%; text-align: center;">Subscribe Now</a>
+
+                    <div class="target">
+                        <strong>Best for:</strong> Enterprise teams, complete department replacement, complex operations
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-calculator">
+        <div class="container">
+            <h2>The ROI is Obvious</h2>
+            <p class="subtitle">Compare the true cost of human employees vs AI automation</p>
+
+            <div class="roi-grid">
+                <div class="roi-comparison">
+                    <h3>Traditional Employee Cost</h3>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Base Salary</span>
+                        <span class="comparison-value">$60,000/yr</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Benefits (30%)</span>
+                        <span class="comparison-value">$18,000/yr</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Payroll Tax</span>
+                        <span class="comparison-value">$7,500/yr</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Training & Onboarding</span>
+                        <span class="comparison-value">$5,000/yr</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Equipment & Tools</span>
+                        <span class="comparison-value">$3,000/yr</span>
+                    </div>
+                    <div class="comparison-item" style="border-top: 2px solid rgba(255,255,255,0.3); margin-top: 20px; padding-top: 20px;">
+                        <span class="comparison-label"><strong>Total Annual Cost</strong></span>
+                        <span class="comparison-value">$93,500</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Hours Available</span>
+                        <span class="comparison-value">~2,000 hrs/yr</span>
+                    </div>
+                </div>
+
+                <div class="roi-comparison">
+                    <h3>AI Team Package</h3>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Monthly Subscription</span>
+                        <span class="comparison-value">$7,000/mo</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Setup Fee</span>
+                        <span class="comparison-value">$0</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Benefits</span>
+                        <span class="comparison-value">$0</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Payroll Tax</span>
+                        <span class="comparison-value">$0</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Training</span>
+                        <span class="comparison-value">$0</span>
+                    </div>
+                    <div class="comparison-item" style="border-top: 2px solid rgba(255,255,255,0.3); margin-top: 20px; padding-top: 20px;">
+                        <span class="comparison-label"><strong>Total Annual Cost</strong></span>
+                        <span class="comparison-value">$84,000</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Hours Available</span>
+                        <span class="comparison-value savings">8,760 hrs/yr (24/7)</span>
+                    </div>
+                    <div class="comparison-item" style="background: rgba(16, 185, 129, 0.2); padding: 20px; border-radius: 8px; margin-top: 20px;">
+                        <span class="comparison-label"><strong>Annual Savings</strong></span>
+                        <span class="comparison-value savings">$9,500+</span>
+                    </div>
+                    <div class="comparison-item" style="background: rgba(16, 185, 129, 0.2); padding: 20px; border-radius: 8px;">
+                        <span class="comparison-label"><strong>Productivity Gain</strong></span>
+                        <span class="comparison-value savings">4.4x more hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Discovery Call</h3>
+                    <p>We discuss your workflows, pain points, and automation opportunities. Typical ROI analysis takes 30 minutes.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Custom Proposal</h3>
+                    <p>Receive a tailored automation plan with specific workflows, timelines, and expected outcomes.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>We deploy and configure your AI agents, integrate with your tools, and test everything thoroughly.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Optimize</h3>
+                    <p>Your AI team goes live. We monitor performance, optimize workflows, and provide ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2>Powered by Proven Technology</h2>
+            <p class="subtitle">Built on the I PROACTIVE multi-agent platform</p>
+
+            <div class="tech-features">
+                <div class="tech-feature">
+                    <h3>Multi-Agent Orchestration</h3>
+                    <p>Coordinate multiple AI agents working together seamlessly on complex workflows.</p>
+                </div>
+
+                <div class="tech-feature">
+                    <h3>Claude & GPT-4 Models</h3>
+                    <p>Leverage the most advanced AI models for reasoning, analysis, and execution.</p>
+                </div>
+
+                <div class="tech-feature">
+                    <h3>Custom Tool Integration</h3>
+                    <p>Connect to your existing tools: CRMs, databases, APIs, spreadsheets, and more.</p>
+                </div>
+
+                <div class="tech-feature">
+                    <h3>Memory & Context</h3>
+                    <p>Agents remember past interactions and maintain context across workflows.</p>
+                </div>
+
+                <div class="tech-feature">
+                    <h3>Real-time Monitoring</h3>
+                    <p>Live dashboards showing agent activity, task completion, and performance metrics.</p>
+                </div>
+
+                <div class="tech-feature">
+                    <h3>Security & Compliance</h3>
+                    <p>Enterprise-grade security with encrypted data storage and audit trails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Deploy Your AI Team?</h2>
+            <p>Book a discovery call to explore how AI automation can transform your business</p>
+            <div class="hero-buttons">
+                <a href="mailto:james@fullpotential.com?subject=AI Automation Discovery Call Request&body=Hi, I'm interested in learning more about AI automation for my business.%0D%0A%0D%0ACompany:%0D%0ARole:%0D%0ABiggest operational challenge:%0D%0A%0D%0ABest time for a call:" class="cta-button" style="font-size: 20px;">Book Discovery Call</a>
+                <a href="https://fullpotential.com" class="cta-button secondary" style="font-size: 20px;">Explore Full Potential</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Full Potential AI. Part of the <a href="https://coranation.org">Conscious Circulation</a> ecosystem.</p>
+            <p style="margin-top: 10px; font-size: 14px;">
+                <a href="https://fullpotential.com">Home</a> •
+                <a href="https://fullpotential.com/match">I MATCH</a> •
+                <a href="https://fullpotential.com/coaching">Coaching</a> •
+                <a href="mailto:james@fullpotential.com">Contact</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
