@@ -41,6 +41,14 @@ else
     echo "⚠️  No email service configured - will use simulation mode"
 fi
 
+# Apollo.io API (optional but recommended)
+if APOLLO_KEY=$("$VAULT_SCRIPTS/session-get-credential.sh" apollo_api_key 2>/dev/null); then
+    HAS_APOLLO=true
+    echo "✅ APOLLO_API_KEY retrieved"
+else
+    echo "⚠️  No Apollo API key found (prospect data will be limited)"
+fi
+
 # Sync code to server
 echo ""
 echo -e "${YELLOW}📤 Syncing code to production server...${NC}"
@@ -58,26 +66,21 @@ ssh "$SERVER" "ps aux | grep 'uvicorn.*8700' | grep -v grep | awk '{print \$2}' 
 echo ""
 echo -e "${YELLOW}🚀 Starting service with vault credentials...${NC}"
 
-if [ "$HAS_BREVO" = true ]; then
-    ssh "$SERVER" "cd $REMOTE_PATH && \
-        ANTHROPIC_API_KEY='$ANTHROPIC_KEY' \
-        BREVO_API_KEY='$BREVO_KEY' \
-        BREVO_FROM_EMAIL='$BREVO_SENDER' \
-        BREVO_FROM_NAME='James from Full Potential AI' \
-        BREVO_DAILY_LIMIT='300' \
-        nohup python3 -m uvicorn main:app --host 0.0.0.0 --port 8700 > logs/app.log 2>&1 &"
-elif [ "$HAS_SENDGRID" = true ]; then
-    ssh "$SERVER" "cd $REMOTE_PATH && \
-        ANTHROPIC_API_KEY='$ANTHROPIC_KEY' \
-        SENDGRID_API_KEY='$SENDGRID_KEY' \
-        SENDGRID_FROM_EMAIL='james@fullpotential.com' \
-        SENDGRID_FROM_NAME='James from Full Potential AI' \
-        nohup python3 -m uvicorn main:app --host 0.0.0.0 --port 8700 > logs/app.log 2>&1 &"
-else
-    ssh "$SERVER" "cd $REMOTE_PATH && \
-        ANTHROPIC_API_KEY='$ANTHROPIC_KEY' \
-        nohup python3 -m uvicorn main:app --host 0.0.0.0 --port 8700 > logs/app.log 2>&1 &"
+# Build environment variables
+ENV_VARS="ANTHROPIC_API_KEY='$ANTHROPIC_KEY'"
+
+if [ "$HAS_APOLLO" = true ]; then
+    ENV_VARS="$ENV_VARS APOLLO_API_KEY='$APOLLO_KEY'"
 fi
+
+if [ "$HAS_BREVO" = true ]; then
+    ENV_VARS="$ENV_VARS BREVO_API_KEY='$BREVO_KEY' BREVO_FROM_EMAIL='$BREVO_SENDER' BREVO_FROM_NAME='James from Full Potential AI' BREVO_DAILY_LIMIT='300'"
+elif [ "$HAS_SENDGRID" = true ]; then
+    ENV_VARS="$ENV_VARS SENDGRID_API_KEY='$SENDGRID_KEY' SENDGRID_FROM_EMAIL='james@fullpotential.com' SENDGRID_FROM_NAME='James from Full Potential AI'"
+fi
+
+# Deploy with all credentials
+ssh "$SERVER" "cd $REMOTE_PATH && $ENV_VARS nohup python3 -m uvicorn main:app --host 0.0.0.0 --port 8700 > logs/app.log 2>&1 &"
 
 # Wait for service to start
 echo "⏳ Waiting for service to start..."
