@@ -9,6 +9,7 @@ from typing import Optional
 
 # Import marketing engine API
 from marketing_engine.api import router as marketing_router
+from marketing_engine.dashboard import router as dashboard_router
 
 app = FastAPI(
     title="AI Automation Services",
@@ -18,6 +19,7 @@ app = FastAPI(
 
 # Include marketing engine API routes
 app.include_router(marketing_router)
+app.include_router(dashboard_router, prefix="/api/marketing")
 
 # Get the directory containing this file
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
