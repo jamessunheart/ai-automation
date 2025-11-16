@@ -1,6 +1,7 @@
 """Services for marketing engine"""
 
-from .email_service import EmailService, get_email_service
+# Using Brevo email service (SendGrid replacement)
+from .email_service_brevo import BrevoEmailService as EmailService, get_brevo_service as get_email_service
 
 __all__ = [
     "EmailService",
